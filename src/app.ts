@@ -4,7 +4,7 @@ import compression from 'compression';
 import cors from 'cors';
 import morgan from 'morgan';
 import Controller from '@/utils/interfaces/controller.interface';
-import ErrorMiddleware from '@/middleware/error.middleware';
+import ErrorMiddleware from '@/middlewares/error.middleware';
 import helmet from 'helmet';
 
 class App {
@@ -44,7 +44,7 @@ class App {
         const { MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
 
         mongoose.connect(
-            `mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
+            `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
         );
     }
 
